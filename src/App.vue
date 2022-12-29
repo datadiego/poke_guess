@@ -1,14 +1,20 @@
 <template>
   <PokemonPage/>
+  <PokemonPicture/>
+  <PokemonOptions/>
 </template>
 
 <script>
 import PokemonPage from './pages/PokemonPage.vue'
+import PokemonPicture from './components/PokemonPicture.vue'
+import PokemonOptions from './components/PokemonOptions.vue'
 
 export default {
   name: 'App',
   components: {
-    PokemonPage,
+    PokemonPage, 
+    PokemonPicture, 
+    PokemonOptions
   }
 }
 </script>
