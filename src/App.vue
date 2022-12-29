@@ -1,6 +1,6 @@
 <template>
   <PokemonPage/>
-  <PokemonPicture/>
+  <PokemonPicture :pokemonid="4" />
   <PokemonOptions/>
 </template>
 
