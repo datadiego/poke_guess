@@ -4,4 +4,5 @@ import App from './App.vue'
 import animations from './css/animations.css'
 import styles from './css/styles.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.mount('#app')

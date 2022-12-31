@@ -26,15 +26,21 @@ export default {
 <style>
 ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
 }
 li {
-    padding: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     background-color: white;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     cursor: pointer;
     margin-bottom: 10px;
     width: 250px;
+    text-align: center;
+    
 }
 
 li:hover {
@@ -42,8 +48,11 @@ li:hover {
 }
 
 .options-container {
+    margin: 0 auto;
+    width: 250px;
     display: flex;
     justify-content: center;
+
 }
 
 </style>

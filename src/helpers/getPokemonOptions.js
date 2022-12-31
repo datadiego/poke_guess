@@ -8,7 +8,6 @@ const getPokemons = () => {
 const getPokemonOptions = async() =>{
     const mixedPokemons = getPokemons().sort(()=>Math.random() - 0.5)
     const pokemons = await getPokemonNames(mixedPokemons.splice(0,4))
-    //put every pokemons.name capitalized
     pokemons.forEach(pokemon => pokemon.name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1))
     return pokemons
 }
