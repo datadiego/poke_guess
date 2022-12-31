@@ -56,14 +56,14 @@ export default {
             }
             else{
                 console.log("mala")
-                this.message = `Error! Es ${this.pkmn_ronda.name}`
+                this.message = `¡Error! Es ${this.pkmn_ronda.name}`
                 this.fallos += 1
             }
         },
         nextGame(){
-            this.mixPokemonArray()
             this.show_pokemon = false
             this.show_answer = false
+            this.mixPokemonArray()
         }
     },
     mounted(){
