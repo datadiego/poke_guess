@@ -31,7 +31,7 @@ h1{
 }
 @media only screen and (max-width: 600px) {
   #app{
-    margin-top: 0px;
+    margin-top: 20px;
 
   }
 }
