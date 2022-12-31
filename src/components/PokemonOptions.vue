@@ -28,6 +28,7 @@ ul {
     list-style-type: none;
 }
 li {
+    padding: 12px;
     background-color: white;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.2);
