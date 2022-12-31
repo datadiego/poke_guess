@@ -8,14 +8,13 @@ const getPokemons = () => {
 const getPokemonOptions = async() =>{
     const mixedPokemons = getPokemons().sort(()=>Math.random() - 0.5)
     const pokemons = await getPokemonNames(mixedPokemons.splice(0,4))
-    // console.table(pokemons)
+    //put every pokemons.name capitalized
+    pokemons.forEach(pokemon => pokemon.name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1))
     return pokemons
 }
 
 const getPokemonNames = async( [a,b,c,d] = [] ) =>{
-// const resp = await pokemonApi.get(`/1`)
-// const {name} = resp.data
-// console.log(name, resp.data.id)
+
 const promiseArr = [
     pokemonApi.get(`/${a}`),
     pokemonApi.get(`/${b}`),
@@ -23,7 +22,6 @@ const promiseArr = [
     pokemonApi.get(`/${d}`)
 ]
 const [p1, p2, p3, p4] = await Promise.all(promiseArr)
-console.log(p1.data.name)
 return [
     { name:p1.data.name, id:p1.data.id },
     { name:p2.data.name, id:p2.data.id },
