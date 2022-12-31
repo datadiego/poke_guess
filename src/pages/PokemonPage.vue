@@ -4,8 +4,8 @@
         <h1>¿Cual es este pokemon?</h1>
         <PokemonPicture :pokemonid="pkmn_ronda.id" :showpokemon="show_pokemon" />
         <PokemonOptions :pokemons="pokemonArr" @select="checkAnswer($event)"/>
-        <h1>Aciertos: {{ aciertos }}</h1>
-        <h1>Fallos: {{ fallos }}</h1>
+        <h1>👌 {{ aciertos }} 💀 {{ fallos }}</h1>
+        <h1></h1>
         <div v-if="show_answer">
             <h2> {{ message }} </h2>
             <button @click="nextGame">Siguiente</button>
@@ -42,25 +42,23 @@ export default {
         async mixPokemonArray(){
             this.pokemonArr = await getPokemonOptions()
             this.pkmn_ronda = this.pokemonArr[Math.floor(Math.random() * 4)] 
-            console.log(this.pokemonArr)
-            console.log('Adivina este:', this.pkmn_ronda, this.pkmn_ronda.id)
         },
         checkAnswer(pokemon){
             this.show_pokemon = true
             this.show_answer = true
-            console.log('AAAA', pokemon, this.pkmn_ronda.id)
+            
             if(pokemon == this.pkmn_ronda.id){
-                console.log("Buena")
                 this.message= `¡Correcto! Es ${this.pkmn_ronda.name}`
                 this.aciertos += 1 
             }
             else{
-                console.log("mala")
                 this.message = `¡Error! Es ${this.pkmn_ronda.name}`
                 this.fallos += 1
             }
         },
         nextGame(){
+            this.pokemonArr = []
+            this.pkmn_ronda = null
             this.show_pokemon = false
             this.show_answer = false
             this.mixPokemonArray()
@@ -73,5 +71,17 @@ export default {
 </script>
 
 <style>
-
+h1{
+    text-align: center;
+    margin: 0;
+}
+button{
+    margin: 0 auto;
+    display: block;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
 </style>
