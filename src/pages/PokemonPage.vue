@@ -1,5 +1,5 @@
 <template>
-    <h1 v-if="!pkmn_ronda">Buscando en la pokedex...</h1>
+    <h1 v-if="!pkmn_ronda" id="titulo">Buscando en la pokedex...</h1>
     <div v-else>
         <h1>¿Cual es este pokemon?</h1>
         <PokemonPicture :pokemonid="pkmn_ronda.id" :showpokemon="show_pokemon" />
@@ -71,10 +71,7 @@ export default {
 </script>
 
 <style>
-h1{
-    text-align: center;
-    margin: 0;
-}
+
 button{
     margin: 0 auto;
     display: block;
@@ -84,4 +81,5 @@ button{
     padding: 10px;
     cursor: pointer;
 }
+
 </style>
